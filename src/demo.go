@@ -10,6 +10,7 @@ import (
 
 func main() {
 	fmt.Println("hello world 5")
+
 	// loop1()
 	// days()
 	// whatday(1)
@@ -43,7 +44,7 @@ func main() {
 	// ftest()
 	// writefiledemo()
 	// mapdemo()
-	// mapdemo2()
+	mapdemo2()
 	// methoddemo()
 	// interfacedemo()
 	// interfacedemo2()
@@ -71,7 +72,7 @@ func main() {
 	// collydemo()
 	// collydemo2()
 	// redisdemo()
-	redisgame()
+	// redisgame()
 	// httpcount()
 	// apidemo()
 	// apidemoint()
@@ -101,4 +102,9 @@ func main() {
 	// md5demo()
 	// i := 11
 	// fmt.Printf("Is %d even? %v\n", i, bater.Even(i))
+
+	// leetcode
+	fmt.Println("twoSum", twoSum([]int{2, 7, 11, 15}, 9))
+	fmt.Println("twoSum2", twoSum2([]int{2, 7, 11, 15}, 9))
+
 }
