@@ -44,7 +44,7 @@ func main() {
 	// ftest()
 	// writefiledemo()
 	// mapdemo()
-	mapdemo2()
+	// mapdemo2()
 	// methoddemo()
 	// interfacedemo()
 	// interfacedemo2()
@@ -104,7 +104,9 @@ func main() {
 	// fmt.Printf("Is %d even? %v\n", i, bater.Even(i))
 
 	// leetcode
-	fmt.Println("twoSum", twoSum([]int{2, 7, 11, 15}, 9))
-	fmt.Println("twoSum2", twoSum2([]int{2, 7, 11, 15}, 9))
-
+	// fmt.Println("twoSum", twoSum([]int{2, 7, 11, 15}, 9))
+	// fmt.Println("twoSum2", twoSum2([]int{2, 7, 11, 15}, 9))
+	// addTwoNumbers_main()
+	// lengthOfLongestSubstring_demo()
+	strconvdemo2()
 }
