@@ -109,6 +109,7 @@ func main() {
 	// addTwoNumbers_main()
 	// lengthOfLongestSubstring_demo()
 	strconvdemo2()
-	errgroup_demo() //concurrent map writes
+	errgroup_demo()
+	// errgroup_demo_datarace() //concurrent map writes, error will occur but not always
 
 }
