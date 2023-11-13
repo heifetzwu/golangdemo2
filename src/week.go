@@ -17,4 +17,7 @@ func days() {
 
 	week, _ = goweek.NewWeek(2021, 2)
 	fmt.Println(week.Days)
+
+	week, _ = goweek.NewWeek(2023, 12)
+	fmt.Println(week.Days)
 }

@@ -11,13 +11,13 @@ import (
 // }
 
 type UserInfo struct {
-	Name string
-	Age  int
+	Name string `json:"NAME2"`
+	Age  int    `json:"age2"`
 }
 
 func jsondemo() {
-	var jsonString string
-	jsonString = `[{"name":"syhlion","age":5} ,{"name":"jack","age":1}]`
+	var jsonString string = `[{"NAME2":"syhlion","Age2":5} ,{"name2":"jack","age":1}]`
+	// jsonString = `[{"Name":"syhlion","Age":5} ,{"name":"jack","age":1}]`
 	fmt.Println(jsonString)
 	//把 json unmarshal 進去 struct
 	// u := &UserInfo{}

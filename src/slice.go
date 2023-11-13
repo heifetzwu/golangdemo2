@@ -31,11 +31,17 @@ func slice2() {
 
 func slice3() {
 	s := make([]string, 3)
+	s1 := s
+
+	fmt.Printf("#1 addr of s = %p \n", s)
 	fmt.Println("String-Slice", s)
 	s[0] = "a"
+	fmt.Printf("#2 addr of s = %p \n", s)
 	s[2] = "b"
-	s = append(s, "c", "d")
 
-	fmt.Println(s)
+	s = append(s, "c", "d")
+	fmt.Printf("#3 addr of s = %p \n", s)
+	fmt.Println("s= ", s)
+	fmt.Println("s1= ", s1)
 
 }

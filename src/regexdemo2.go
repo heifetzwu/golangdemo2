@@ -52,7 +52,12 @@ func regexdemo2() {
 	r1, _ := regexp.Compile("([\\D]*)([,0-9]*[.]+[0-9]*)")
 
 	fmt.Println("ss = ", ss)
-	fmt.Println(15, r1.FindString(ss))
+	fmt.Println(15.1, r1.FindString(ss))
+	sss := r1.FindAllString(ss, -1)
+	for i, s := range sss {
+		fmt.Printf("15.%d--%s\n", i, s)
+
+	}
 
 	res := r1.FindStringSubmatch(ss)
 	resIdx := r1.FindStringSubmatchIndex(ss)

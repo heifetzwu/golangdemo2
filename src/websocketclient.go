@@ -1,7 +1,12 @@
 package main
 
-import "log"
-import "github.com/gorilla/websocket"
+import (
+	"log"
+	"strconv"
+	"time"
+
+	"github.com/gorilla/websocket"
+)
 
 // func main() {
 // 	websocketclient()
@@ -13,16 +18,23 @@ func websocketclient() {
 		log.Fatal("dial:", err)
 	}
 	defer c.Close()
+	for i := 0; i < 2; i++ {
+		msgstr := "ithome30day#" + strconv.Itoa(i)
 
-	err = c.WriteMessage(websocket.TextMessage, []byte("hello ithome30day  22"))
-	if err != nil {
-		log.Println(err)
-		return
+		err = c.WriteMessage(websocket.TextMessage, []byte(msgstr))
+		log.Printf("clinet write: %s\n", msgstr)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		time.Sleep(10 * time.Second)
 	}
+
+	time.Sleep(5 * time.Second)
 	_, msg, err := c.ReadMessage()
 	if err != nil {
 		log.Println("read:", err)
 		return
 	}
-	log.Printf("receive: %s\n", msg)
+	log.Printf("clinet receive: %s\n", msg)
 }

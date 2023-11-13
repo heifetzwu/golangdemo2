@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	// "log"
 )
@@ -14,7 +13,7 @@ func readfiledemo() {
 }
 
 func read1() {
-	dat, _ := ioutil.ReadFile("dunkerk.txt")
+	dat, _ := os.ReadFile("dunkerk.txt")
 	// if err != nil {
 	fmt.Println(dat)
 	fmt.Println(string(dat))

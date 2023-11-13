@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -15,9 +14,15 @@ import (
 // var athelet = "http://allsports.tw/ajax/photo/list/777922/777922/zekken/20203/0/"
 // var athelet = "https://allsports.tw/ajax/photo/list/777994/777994/zekken/3165/0/"
 // var athelet = "https://allsports.tw/ajax/photo/list/777994/777994/zekken/2668/0/"
-var athelet = "https://allsports.tw/ajax/photo/list/778094/778094/zekken/11436/0/"
+// var athelet = "https://allsports.tw/ajax/photo/list/778094/778094/zekken/11436/0/"
 
 // var athelet = "http://allsports.tw/ajax/photo/list/777889/777889/zekken/11887/0/"
+// var athelet = "https://allsports.tw/ajax/photo/list/778134/778134/zekken/24141/0/"
+var athelet = "https://allsports.tw/ajax/photo/list/778218/778218/zekken/22117/0/"
+
+// var athelet = "https://allsports.tw/view/778218/778218/zekken/22117/"
+
+// https://allsports.tw/view/778218/778218/zekken/22117/
 var savepath = "c://user//temp//"
 
 type ath struct {
@@ -54,7 +59,7 @@ func httpallsp() {
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Println("body read error:", err)
 	}

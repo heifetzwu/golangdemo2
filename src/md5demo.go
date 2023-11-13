@@ -3,14 +3,15 @@ package main
 import (
 	"crypto/md5"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sort"
 )
 
 func md5demo() {
+	fmt.Println("## os.Args[1] = ", os.Args[1])
 	m, err := MD5All(os.Args[1])
+
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -33,7 +34,7 @@ func MD5All(root string) (map[string][md5.Size]byte, error) {
 		if !info.Mode().IsRegular() {
 			return nil
 		}
-		data, err := ioutil.ReadFile(path)
+		data, err := os.ReadFile(path)
 		if err != nil {
 			return err
 		}

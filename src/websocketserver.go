@@ -4,9 +4,9 @@ import (
 	// 	"fmt"
 	"log"
 	"net/http"
-)
 
-import "github.com/gorilla/websocket"
+	"github.com/gorilla/websocket"
+)
 
 // func main() {
 // 	websocketserver()
@@ -32,12 +32,15 @@ func websocketserver() {
 			if err != nil {
 				log.Println("read:", err)
 				break
+				// return
 			}
-			log.Printf("receive: %s\n", msg)
+			log.Printf("## server receive: %s\n", string(msg))
 			err = c.WriteMessage(mtype, msg)
+			log.Println("## server write:", string(msg))
 			if err != nil {
-				log.Println("write:", err)
+				log.Println("server write:", err)
 				break
+				// return
 			}
 		}
 	})

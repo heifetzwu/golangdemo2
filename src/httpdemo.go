@@ -4,7 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
+
+	// "io/ioutil"
+
 	"log"
 	"net/http"
 	"net/url"
@@ -22,7 +25,7 @@ func httpGet() {
 
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 
 	}
@@ -35,13 +38,13 @@ func httpPost() {
 		"application/x-www-form-urlencoded",
 		strings.NewReader("name=test"))
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("## err = ", err)
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		// handle error
+		fmt.Println("err = ", err)
 	}
 
 	fmt.Println(string(body))
@@ -61,7 +64,7 @@ func httpClient() {
 
 	resp, err := client.Do(req)
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		// handle error
 	}
@@ -77,7 +80,7 @@ func httpPostForm() {
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		// handle error
 	}
@@ -174,7 +177,7 @@ func httpsitemap() {
 		return
 	}
 	defer resp.Body.Close()
-	sitemap, err := ioutil.ReadAll(resp.Body)
+	sitemap, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
 		return

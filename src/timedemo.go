@@ -20,6 +20,7 @@ func timedemo() {
 		fmt.Println("hello world")
 	})
 
+	fmt.Println("unix: ", time.Now().UnixNano())
 	//這邊 Sleep 5s 是為了讓上面的 AfterFunc 會執行，不然就像前面章節有講到的 只要 main thread 結束，任何 sub thread 都會跟著一起結束
 	time.Sleep(5 * time.Second)
 	fmt.Println("end")

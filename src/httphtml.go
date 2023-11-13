@@ -116,4 +116,6 @@ func queryhandler(w http.ResponseWriter, r *http.Request) {
 
 	key := keys[0]
 	fmt.Fprint(w, "Url Param 'key' is: "+string(key)+"\n")
+	// fmt.Fprint(w, "Url Param 'key' is: "+keys)
+	fmt.Println(" key = ", keys)
 }
